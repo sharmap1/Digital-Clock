@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+.title {
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+  font-size: 50px;
+}
+.time {
+  text-align: center;
+  background-color: black;
+  color: aqua;
+  font-size: 100px;
+}
