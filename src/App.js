@@ -3,39 +3,48 @@ import React, { useState } from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
 
 const App = () => {
-  let newtime = new Date().toLocaleTimeString();
+  const lightblue = "lightblue";
+  const [bg, setBg] = useState(lightblue);
+  const [name, setName] = useState("click");
+  const [title, setTitle] = useState("Snow White");
+  const [image, setImage] = useState(
+    "https://d23.com/app/uploads/2015/06/snow41160x600.jpg"
+  );
 
-  const [ctime, setCtime] = useState(newtime);
-  // newtime has been passed in the useState coz it is the initial value
-  // ctime is the initial value in the parameter which is now equal to newtime
-
-  const UpdateTime = () => {
-    newtime = new Date().toLocaleTimeString();
-    // calling the exact time again
-    setCtime(newtime);
-    // setCtime is updated data
+  const bgChange = () => {
+    let newBg = "pink";
+    setBg(newBg);
+    setName("Double click 😄");
+    setTitle("Awesome 7 Dwarfs");
+    setImage(
+      "https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/snow-white-and-the-seven-dwarfs1.jpg"
+    );
   };
-
-  setInterval(UpdateTime, 1000);
-
+  const bgBack = () => {
+    setBg(lightblue);
+    setName("click");
+    setTitle("Snow White");
+    setImage("https://d23.com/app/uploads/2015/06/snow41160x600.jpg");
+  };
   return (
     <>
-      <Container>
+      <Container
+        className="cont"
+        style={{ backgroundColor: bg, marginTop: "50px", padding: "20px" }}
+      >
         <Row>
           <Col md={12}>
             <Card>
-              <Card.Img
-                src="https://www.algonquincollege.com/pembroke/files/2014/01/TimeFlies.jpg"
-                alt="Card image"
-              />
-              <Card.Title className="title">What's the Time?</Card.Title>
-              <Card.Text>
-                <h1 className="time">{ctime}</h1>
-              </Card.Text>
+              <Card.Img src={image} alt="Card image" />
+              <Card.Title className="title">{title}</Card.Title>
             </Card>
-            {/* <Button variant="info" onClick={UpdateTime}>
-          click
-        </Button> */}
+          </Col>
+        </Row>
+        <Row>
+          <Col md={6}>
+            <button className="btn" onClick={bgChange} onDoubleClick={bgBack}>
+              {name}
+            </button>
           </Col>
         </Row>
       </Container>
