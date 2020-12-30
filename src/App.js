@@ -28,7 +28,7 @@ const App = () => {
                 src="https://www.algonquincollege.com/pembroke/files/2014/01/TimeFlies.jpg"
                 alt="Card image"
               />
-              <Card.Title className="title">What's the Time?</Card.Title>
+              <Card.Title className="title">What's the Time??</Card.Title>
               <Card.Text>
                 <h1 className="time">{ctime}</h1>
               </Card.Text>
