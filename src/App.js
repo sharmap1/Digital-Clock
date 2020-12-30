@@ -14,7 +14,7 @@ const App = () => {
   const bgChange = () => {
     let newBg = "pink";
     setBg(newBg);
-    setName("Double click 😄");
+    setName("Back 😄");
     setTitle("Awesome 7 Dwarfs");
     setImage(
       "https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/snow-white-and-the-seven-dwarfs1.jpg"
